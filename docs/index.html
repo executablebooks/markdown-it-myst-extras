@@ -7,18 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="https://cdn.jsdelivr.net/npm/markdown-it@12/dist/markdown-it.min.js"></script>
-    <script src="https://unpkg.com/markdown-it-plugin-template"></script>
+    <script src="https://unpkg.com/markdown-it-myst-extras"></script>
   </head>
   <body>
     <div class="main">
       <div class="header">
-        <h1>markdown-it-plugin-template</h1>
+        <h1>markdown-it-myst-extras</h1>
       </div>
       <div class="content">
         <p>
           This is a minimalist demonstration of the
-          <a href="https://github.com/executablebooks/markdown-it-plugin-template">
-            markdown-it-plugin-template
+          <a href="https://github.com/executablebooks/markdown-it-myst-extras">
+            markdown-it-myst-extras
           </a>
           plugin.
         </p>
@@ -27,9 +27,15 @@
           rendered.
         </p>
         <textarea id="inputtext" class="inputtext">
-# Title
+(target)=
 
-Hallo world, paragraph in **blue**!
+# Header
+
+% A comment
+
+Block break:
+
++++
         </textarea>
         <div id="renderer" class="rendered"></div>
       </div>
@@ -45,7 +51,7 @@ Hallo world, paragraph in **blue**!
       function handleChange(e) {
         const text = window
           .markdownit()
-          .use(window.markdownitExample)
+          .use(window.markdownitMystExtra)
           .render(e.target.value)
         renderer.innerHTML = text
       }

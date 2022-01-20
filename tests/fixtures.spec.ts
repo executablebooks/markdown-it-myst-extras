@@ -1,7 +1,7 @@
 /* eslint-disable jest/valid-title */
 import fs from "fs"
 import MarkdownIt from "markdown-it"
-import example_plugin from "../src"
+import { mystBlockPlugin, colonFencePlugin } from "../src"
 
 /** Read a "fixtures" file, containing a set of tests:
  *
@@ -18,10 +18,18 @@ function readFixtures(name: string): string[][] {
   return fixtures.split("\n.\n\n").map(s => s.split("\n.\n"))
 }
 
-describe("Parses basic", () => {
-  readFixtures("basic").forEach(([name, text, expected]) => {
-    const mdit = MarkdownIt().use(example_plugin)
+describe("Parses MyST blocks", () => {
+  readFixtures("block").forEach(([name, text, expected]) => {
+    const mdit = MarkdownIt("commonmark").use(mystBlockPlugin)
     const rendered = mdit.render(text)
-    it(name, () => expect(rendered).toEqual(`${expected}\n`))
+    it(name, () => expect(rendered.trim()).toEqual(`${expected}\n`.trim()))
+  })
+})
+
+describe("Parses Colon Fences", () => {
+  readFixtures("colon_fence").forEach(([name, text, expected]) => {
+    const mdit = MarkdownIt("commonmark").use(colonFencePlugin)
+    const rendered = mdit.render(text)
+    it(name, () => expect(rendered.trim()).toEqual(`${expected}\n`.trim()))
   })
 })

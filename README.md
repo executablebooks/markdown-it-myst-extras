@@ -3,9 +3,7 @@
 [![ci-badge]][ci-link]
 [![npm-badge]][npm-link]
 
-A template for creating a [markdown-it](https://github.com/markdown-it/markdown-it) plugin.
-
-See <https://executablebooks.github.io/markdown-it-plugin-template/> for a demonstration!
+Additional [markdown-it](https://github.com/markdown-it/markdown-it) plugins required for the MyST specification.
 
 ## Usage
 
@@ -13,9 +11,9 @@ As a Node module:
 
 ```javascript
 import MarkdownIt from "markdown-it"
-import examplePlugin from "markdown-it-plugin-template"
+import { mystBlockPlugin, colonFencePlugin } from "markdown-it-myst-extras"
 
-const text = MarkdownIt().use(examplePlugin).render("*a*")
+const text = MarkdownIt().use(mystBlockPlugin).render("+++")
 ```
 
 In the browser:
@@ -26,12 +24,12 @@ In the browser:
     <head>
         <title>Example Page</title>
         <script src="https://cdn.jsdelivr.net/npm/markdown-it@12/dist/markdown-it.min.js"></script>
-        <script src="https://unpkg.com/markdown-it-plugin-template"></script>
+        <script src="https://unpkg.com/markdown-it-myst-extras"></script>
     </head>
     <body>
         <div id="demo"></div>
         <script>
-            const text = window.markdownit().use(window.markdownitExample).render("*a*");
+            const text = window.markdownit().use(window.markdownitMystExtra).render("+++");
             document.getElementById("demo").innerHTML = text
         </script>
     </body>
@@ -61,13 +59,13 @@ In the browser:
    - `rollup.config.js`
 3. Install the `node_module` dependencies: `npm install` or `npm ci` (see [Install a project with a clean slate](https://docs.npmjs.com/cli/v7/commands/npm-ci)).
 4. Run code formatting; `npm run format`, and linting: `npm run lint:fix`.
-5. Run the unit tests; `npm test`, or with coverage; `npm test -- --coverage`.
+5. Run the unit tests; `≈`, or with coverage; `npm test -- --coverage`.
 
 Now you can start to adapt the code in `src/index.ts` for your plugin, starting with the [markdown-it development recommendations](https://github.com/markdown-it/markdown-it/blob/master/docs/development.md).
 
 Modify the test in `tests/fixtures.spec.ts`, to load your plugin, then the "fixtures" in `tests/fixtures`, to provide a set of potential Markdown inputs and expected HTML outputs.
 
-On commits/PRs to the `master` branch, the GH actions will trigger, running the linting, unit tests, and build tests.
+On commits/PRs to the `main` branch, the GH actions will trigger, running the linting, unit tests, and build tests.
 Additionally setup and uncomment the [codecov](https://about.codecov.io/) action in `.github/workflows/ci.yml`, to provide automated CI coverage.
 
 Finally, you can update the version of your package, e.g.: `npm version patch -m "🚀 RELEASE: v%s"`, push to GitHub; `git push --follow-tags`, build; `npm run build`, and publish; `npm publish`.
@@ -101,10 +99,10 @@ See for example:
 - <https://betterprogramming.pub/the-battle-of-bundlers-6333a4e3eda9>
 
 
-[ci-badge]: https://github.com/executablebooks/markdown-it-plugin-template/workflows/CI/badge.svg
+[ci-badge]: https://github.com/executablebooks/markdown-it-myst-extras/workflows/CI/badge.svg
 [ci-link]: https://github.com/executablebooks/markdown-it--plugin-template/actions
-[npm-badge]: https://img.shields.io/npm/v/markdown-it-plugin-template.svg
-[npm-link]: https://www.npmjs.com/package/markdown-it-plugin-template
+[npm-badge]: https://img.shields.io/npm/v/markdown-it-myst-extras.svg
+[npm-link]: https://www.npmjs.com/package/markdown-it-myst-extras
 
 [GitHub Actions]: https://docs.github.com/en/actions
 [GitHub Pages]: https://docs.github.com/en/pages

@@ -1,9 +1,9 @@
 {
-  "name": "markdown-it-plugin-template",
-  "version": "0.2.1",
-  "description": "A template for creating a markdown-it plugin",
+  "name": "markdown-it-myst-extras",
+  "version": "0.1.0",
+  "description": "Additional markdown-it plugins required for the MyST specification.",
   "author": "Chris Sewell",
-  "homepage": "https://github.com/executablebooks/markdown-it-plugin-template",
+  "homepage": "https://github.com/executablebooks/markdown-it-myst-extras",
   "license": "MIT",
   "keywords": [
     "markdown",
