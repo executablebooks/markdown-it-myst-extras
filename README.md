@@ -29,7 +29,7 @@ In the browser:
     <body>
         <div id="demo"></div>
         <script>
-            const text = window.markdownit().use(window.markdownitMystExtra).render("+++");
+            const text = window.markdownit().use(window.markdownitMystExtra.mystBlockPlugin).render("+++");
             document.getElementById("demo").innerHTML = text
         </script>
     </body>
