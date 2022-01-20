@@ -36,6 +36,12 @@
 Block break:
 
 +++
+
+Colon fence:
+
+:::{markdown}
+[title](www.example.com)
+:::
         </textarea>
         <div id="renderer" class="rendered"></div>
       </div>
@@ -51,7 +57,8 @@ Block break:
       function handleChange(e) {
         const text = window
           .markdownit()
-          .use(window.markdownitMystExtra)
+          .use(window.markdownitMystExtra.mystBlockPlugin)
+          .use(window.markdownitMystExtra.colonFencePlugin)
           .render(e.target.value)
         renderer.innerHTML = text
       }
