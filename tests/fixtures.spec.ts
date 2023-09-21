@@ -1,5 +1,5 @@
-/* eslint-disable jest/valid-title */
-import fs from "fs"
+import { describe, expect, it } from "vitest"
+import fs from "node:fs"
 import MarkdownIt from "markdown-it"
 import { mystBlockPlugin, colonFencePlugin } from "../src"
 
