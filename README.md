@@ -86,6 +86,10 @@ From the [markdown-it development recommendations](https://github.com/markdown-i
 
 Note, for typing, we import this package with `import type`, to ensure the imports are not present in the compiled JavaScript.
 
+### Why Vitest?
+
+There are a number of JavaScript unit testing frameworks (see [this comparison](https://raygun.com/blog/javascript-unit-testing-frameworks/), [jest] is easy to setup/use, flexible, and well used in large projects however does not currently have [native support for ESM](https://github.com/jestjs/jest/issues/9430). [vitest] was chosen for out-of-the box compatibility with [jest], however, it is both more performant and is currently easier to integrate with ESM/TypeScript packages.
+
 ### Why Rollup?
 
 The three main bundlers are; Webpack, Rollup and Parcel, with the functionality gap between all of these bundlers narrowing over the years.
@@ -106,6 +110,7 @@ See for example:
 [prettier]: https://prettier.io/
 [eslint]: https://eslint.org/
 [vitest]: https://vitest.dev/
+[jest]: https://facebook.github.io/jest/
 [rollup]: https://rollupjs.org
 [npm]: https://www.npmjs.com
 [unpkg]: https://unpkg.com/
