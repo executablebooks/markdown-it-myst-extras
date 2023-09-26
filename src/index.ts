@@ -1,6 +1,6 @@
 import type MarkdownIt from "markdown-it/lib"
-import type StateBlock from "markdown-it/lib/rules_block/state_block"
-import type Token from "markdown-it/lib/token"
+import type StateBlock from "markdown-it/lib/rules_block/state_block.js"
+import type Token from "markdown-it/lib/token.js"
 
 /** Parse MyST targets (``(name)=``), blockquotes (``% comment``) and block breaks (``+++``).
  *
